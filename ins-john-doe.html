@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+<title>INC Resolver - Instructor - John Doe</title>
+<style>
+    
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <h2 class="navbar-title">BMCC Task Tracker - Instructor View</h2>
+    <div class="navbar-buttons">
+        <button class="navbar-button">Profile</button>
+        <button class="navbar-button">Logout</button>
+        <!--<button class="navbar-button"></button>-->
+    </div>
+</div>
+
+<div class="container">
+    <div class="left-panel">
+        <div class="task-container">
+            <div><a href="Instructor.html">Assigned Students</a> > John Doe</div>
+        </div>
+        <br>
+        <!--<h2>Dashboard</h2>-->
+        <div class="dashboard">
+            <div class="card">
+                <h3>John Doe</h3>
+                <p>CSC 211H - Advanced Programming Technique Honors - Fall 2023</p>
+                <div class="task-line">                   
+                    <div class="progress-container">
+                        <div class="progress-bar" style="width: 60%;">60%</div>
+                    </div>
+                </div>
+            </div>
+            
+        </div>
+        <div class="task-container">
+            <div class="task-heading">Assigned Class Work</div>
+            <div class="task-divider"></div>
+            <div class="task-line">
+                <div><li>Assignment 5</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status completed">Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Assignment 6</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status completed">Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Assignment 7</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status completed">Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Assignment 8</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status completed">Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Lab 3</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status completed">Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Lab 4</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status completed">Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Lab 5</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status not-completed">Not Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Lab 6</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status not-completed">Not Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Final Project</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status not-completed">Not Completed</div>
+            </div>
+            <div class="task-line">
+                <div><li>Final Exam</li></div>
+                <div class="complete">Open</div>
+                <div>Due: May 06 2024</div>
+                <div class="status not-completed">Not Completed</div>
+            </div>        
+        </div>
+    </div>
+    <div class="right-panel">
+        <div class="task-container">
+            <div class="task-container">
+                <div>Assign Classwork</div>
+            </div>
+            <div class="task-container">
+                <div>Modify Classwork</div>
+            </div>
+            <div class="task-container">
+                <div>Assign Final Grade</div>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "3c1197f9-af83-471b-860f-6437f44e2ca7", // The ID of this integration.
+      region: "us-east", // The region your integration is hosted in.
+      serviceInstanceID: "6725c327-3aa7-45bc-a7c4-b2381be9e18a", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</body>
+</html>
