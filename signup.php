@@ -9,7 +9,7 @@
 
 
 <link rel="stylesheet" href="styles.css">
-<title>INC Resolver - Home</title>
+<title>INC Resolver - Signup</title>
 <style>
     
 </style>
@@ -27,30 +27,51 @@
 <div class="full-screen-container">
     <div class="form-container">
         <h2>Sign Up</h2>
-          <form method="POST" class="flex-form" action="php/signup.php" enctype="multipart/form-data">
+
+        <?php
+            if (isset($_GET['success'])) {
+                echo '<div class="success">Signup Successful</div>';
+            } 
+            elseif (isset($_GET['error-exist'])) {
+                echo '<div class="error">User already exists</div>';
+            } 
+            elseif (isset($_GET['error-pw'])) {
+                echo '<div class="error">Invalid Password</div>';
+            }
+            elseif (isset($_GET['error-inc'])) {
+                echo '<div class="error">Form Incomplete</div>';
+            }
+            elseif (isset($_GET['error-inc'])) {
+                echo '<div class="error">Unknown Error Occured</div>';
+            }
+            elseif (isset($_GET['error-len'])) {
+                echo '<div class="error">Invalid CUNY ID</div>';
+            }
+        ?>
+        
+        <form method="POST" class="flex-form" action="php/signup.php" enctype="multipart/form-data">
           
             <label for="fname">First Name</label>
-            <input type="text" id="fname" name="fname">
+            <input type="text" id="fname" name="fname" required>
 
             <label for="lname">Last Name</label>
-            <input type="text" id="lname" name="lname">
+            <input type="text" id="lname" name="lname" required>
 
             <label for="cunyid">CUNY First ID</label>
-            <input type="number" id="cunyid" name="cunyid">
+            <input type="number" id="cunyid" name="cunyid"  required>
 
             <label for="email">Email</label>
-            <input type="email" id="email" name="email">
+            <input type="email" id="email" name="email" required>
         
             <label for="password">Password</label>
-            <input type="password" id="password" name="password">
+            <input type="password" id="password" name="password" required>
 
             <label for="re-password">Re-enter Password</label>
-            <input type="password" id="re-password" name="re-password">
+            <input type="password" id="re-password" name="re-password" required>
         
-            <input type="submit" class="form-button" name="Register" value="Register">
+            <input type="submit" class="form-button" name="Register" value="Register" required>
 
-            
-          </form>   
+        </form>   
     </div>
 </div>
 
