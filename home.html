@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
+
+
+<link rel="stylesheet" href="styles.css">
+<title>INC Resolver - Home</title>
+<style>
+    
+</style>
+</head>
+<body>
+
+<div class="navbar">
+    <h2 class="navbar-title">BMCC Task Tracker - Home</h2>
+    <div class="navbar-buttons">
+        <button class="navbar-button">Sign In</button>
+        
+        <button class="navbar-button">Sign Up</button>
+    </div>
+</div>
+<div class="full-screen-container">
+    <div class="form-container">
+        <h2>Home Page Coming Here</h2>
+       
+            
+        
+    </div>
+</div>
+
+
+<script>
+    window.watsonAssistantChatOptions = {
+      integrationID: "3c1197f9-af83-471b-860f-6437f44e2ca7", // The ID of this integration.
+      region: "us-east", // The region your integration is hosted in.
+      serviceInstanceID: "6725c327-3aa7-45bc-a7c4-b2381be9e18a", // The ID of your service instance.
+      onLoad: async (instance) => { await instance.render(); }
+    };
+    setTimeout(function(){
+      const t=document.createElement('script');
+      t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js";
+      document.head.appendChild(t);
+    });
+  </script>
+
+</body>
+</html>
