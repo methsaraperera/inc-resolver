@@ -8,30 +8,101 @@
 <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
 
-
 <title>INC Resolver - Home</title>
 <style>
+    .navbar {
+        width: 100%;
+        height:6%;
+        background-color: #fff;
+        color: rgb(0, 0, 0, 1);
+        padding: 10px 20px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        box-sizing: border-box; 
+        overflow-x: auto;
+    }
     
 </style>
 </head>
 <body>
 
 <div class="navbar">
-    <h2 class="navbar-title">BMCC Task Tracker - Home</h2>
+    <h2 class="navbar-title">BMCC INC. Grade Portal</h2>
     <div class="navbar-buttons">
-        <button class="navbar-button">Sign In</button>
-        
-        <button class="navbar-button">Sign Up</button>
     </div>
 </div>
-<div class="full-screen-container">
-    <div class="form-container">
-        <h2>Home Page Coming Here</h2>
-       
+
+
+<section class="home-section">
+    <div class="home-main-section">
+        <div class="home-overlay"></div>
+        <div class="home-content">
+            <h1>Welcome to BMCC INC. Grade Portal</h1>
             
+            <p>At BMCC, we understand the demands of college life, and we're excited to introduce the Inc. Portal 
+                – your go-to platform for streamlined and effective academic success.</p>
+            
+        </div>
+
+        <div class="home-bottom-section-left">
+            <div>
+                <h2>Assignment Management</h2>
+                <p>View, Complete, and Submit your missed assignments and exams.</p>
+            </div>
+            <div>
+                <h2>Status Tracking</h2>
+                <p>Keep track of Improtant Dates, Progress, and Things to do </p>
+            </div>
+            <div>
+                <h2>Appointments</h2>
+                <p>Schedule Appointments with Instructors.</p>
+            </div>
+        </div>
+
         
     </div>
-</div>
+
+    <div class="home-side-section">
+
+        <div class="home-content">
+            <h3>Students,</h3>
+
+            <div class="home-buttons">
+                <a href="login.php" class="home-button"><button class="home-button">Sign In</button></a>
+                
+        
+                <a href="signup.php" class="home-button" ><button class="home-button">Sign Up</button></a>
+            </div>
+            <hr>
+
+
+
+            <h3>Instructors,</h3>
+            <div class="home-buttons">
+                <a href="login.php" class="home-button"><button class="home-button">Sign In</button></a>
+            </div>
+            
+            
+        </div>
+        <div class="home-bottom-section-right">
+            <p class="footer-content">Copyright © 2024 Methsara Perera
+                <br>Tech Innovation Hub Internship @ BMCC Tech Learning Community </p>
+        </div>
+        
+    </div>
+</section>
+
+
+
+
+<!--<div class="full-screen-container">
+    <div class="form-container">
+        <h2>Home Page Coming Here</h2>     
+    </div>
+</div>-->
+
+
 
 
 <script src="js/watson.js"></script>
