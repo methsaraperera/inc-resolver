@@ -20,7 +20,6 @@
     <h2 class="navbar-title">BMCC Task Tracker - Home</h2>
     <div class="navbar-buttons">
         <button class="navbar-button">Home</button>
-        
         <button class="navbar-button">Sign In</button>
     </div>
 </div>
@@ -73,6 +72,10 @@
 
         </form>   
     </div>
+</div>
+
+<div class="footer">
+    <p class="footer-content">Copyright © Methsara Perera - Tech Innovation Hub Internship @ BMCC Tech Learning Community </p>
 </div>
 
 <script src="js/watson.js"></script>
