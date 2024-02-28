@@ -452,8 +452,8 @@ hr{
 }
 
 .text-box{
-    margin-bottom: 0rem; /* Adjust as needed */
-    line-height: 0.5;  /* Adjust as needed for less line spacing */
+    margin-bottom: 0rem; 
+    line-height: 0.5; 
 }
 
 .copy-button {
