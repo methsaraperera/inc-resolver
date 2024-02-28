@@ -451,6 +451,28 @@ hr{
     margin-top: 20%;
 }
 
+.text-box{
+    margin-bottom: 0rem; /* Adjust as needed */
+    line-height: 0.5;  /* Adjust as needed for less line spacing */
+}
 
+.copy-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding-left: 10px;
+}
+
+.copy-button i {
+    color: white;
+}
+
+.copy-button:hover i{
+    color: #ffa000;
+}
+
+.copy-button:active { 
+    transform: scale(0.95); 
+} 
     
 /* Home Page Styling Ends Here */

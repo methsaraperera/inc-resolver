@@ -17,10 +17,13 @@
             <h1>Welcome to BMCC INC. Grade Portal</h1>
             <p>At BMCC, we understand the demands of college life, and we're excited to introduce the Incomplete Grade Portal 
                 – your go-to platform to make up for extended classes and gain academic success.</p>
-            <h3>Secure and Student-Friendly</h3>
-            <p>Rest assured, your data's security is our priority. Our platform provides a safe and user-friendly environment, allowing you to focus on what matters most – your education.</p>
+            <!--<h3>Secure and Student-Friendly</h3>
+            <p>Rest assured, your data's security is our priority. Our platform provides a safe and user-friendly environment, allowing you to focus on what matters most – your education.</p>-->
             
-            <br><br><br><br><p>Student Demo:<br>Email: demo@student.com<br>Password: demo@student.com</p>
+            <br>
+            <h3>Student Demo:</h3>
+            <p class="text-box">Email: <span id="emailText">demo@student.com</span><button class="copy-button" onclick="copyText('emailText')"><i class="fa-solid fa-copy"></i></button></p>
+            <p class="text-box">Password: <span id="passwordText">demo1@student.com</span><button class="copy-button" onclick="copyText('passwordText')"><i class="fa-solid fa-copy"></i></button></p>
         </div>
         
 
@@ -44,30 +47,32 @@
         <div class="home-content">
             <h3>Students,</h3>
             <div class="home-buttons">
-                <a href="login.html" class="home-button"><button class="home-button">Sign In</button></a>
-                <a href="signup.html" class="home-button" ><button class="home-button">Sign Up</button></a>
+                <a href="login.php?stu=true" class="home-button"><button class="home-button">Sign In</button></a>
+                <a href="signup.php" class="home-button" ><button class="home-button">Sign Up</button></a>
             </div>
             <hr>
             <h3>Instructors,</h3>
             <div class="home-buttons">
-                <a href="#" class="home-button"><button class="home-button">Sign In</button></a>
+                <a href="login.php?inc=true" class="home-button"><button class="home-button">Sign In</button></a>
             </div>
             <hr>
             <h3>Reports,</h3>
             <div class="home-buttons">
-                <a href="#" class="home-button"><button class="home-button">Sign In</button></a>
+                <a href="login.php?rep=true" class="home-button"><button class="home-button">Sign In</button></a>
             </div>
         </div>
         <div class="home-bottom-section-right">
-            <p class="footer-content">Copyright © 2024 Methsara Perera
+            <p class="footer-content">Copyright © 2024 <a href="https://github.com/methsaraperera"><u>Methsara Perera</u></a>
                 <br>Tech Innovation Hub Internship
-@ BMCC Tech Learning Community <br>Version: non-dynamic-2/27/2024</p><br>
+@ BMCC Tech Learning Community </p><br><br>
         </div>
         
     </div>
 </section>
 
 <script src="js/watson.js"></script>
+<script src="js/copy.js"></script>
+<script src="https://kit.fontawesome.com/137463bc4f.js" crossorigin="anonymous"></script>
 
 </body>
 </html>
