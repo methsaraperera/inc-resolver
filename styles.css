@@ -2,7 +2,7 @@ body, html {
     margin: 0;
     padding: 0;
     height: 100%;
-    font-family: 'Roboto', sans-serif;
+    font-family: 'Roboto', 'sans-serif';
     background: #E5E5E5; 
 }
 
@@ -39,8 +39,6 @@ body, html {
     cursor: pointer;
 }
 
-
-
 .container {
     display: flex;
     height: calc(100% - 40px); 
@@ -51,8 +49,6 @@ body, html {
     background-color: white;
     padding: 30px;
     min-height: 110%;
-    
-    
 }
 
 .right-panel {
@@ -67,7 +63,6 @@ body, html {
     justify-content: space-between;
     
 }
-
 
 .card {
     width: calc(33.33% - 10px);
@@ -95,6 +90,7 @@ body, html {
     color: rgb(103, 80, 164);
     margin-top: 20px;
 }
+
 .task-container {
     margin-top: 20px;
     background-color:rgba(103, 80, 164, 0.05);
@@ -154,7 +150,6 @@ body, html {
     color: red;
 }
 
-
 .progress-container {
     width:max-content;
     height: min-content;
@@ -185,16 +180,11 @@ body, html {
     overflow-x: auto;
 }
 
-.footer-content{
-    
+.footer-content{   
     width: 100%;
-    color: #000000;
-    
+    color: #000000;   
     font-size: 0.7em;
     text-align: center;
-    
-    
-
 }
 
 a:link{
@@ -213,7 +203,6 @@ a:active {
     color:black;
     text-decoration: none; 
   }
-
 
 .full-screen-container {
     display: flex;
@@ -299,9 +288,7 @@ button {
     font-size: 16px;
 }
 
-
 /* Error and success messages */
-
 .error{
 	text-align: center;
 	color: #721C24;
@@ -330,7 +317,6 @@ button {
 	padding:15px 15px 15px 15px;
 	border-radius: 20px;	
 }
-
 
 /* Home page design */
 .home-section {
@@ -374,12 +360,12 @@ button {
 
 .home-content h1 {
     font-size: 4em;
-    color: #ffa000; /* Standout text color (e.g., gold) */
+    color: #ffa000; 
     margin-bottom: 10px;    
 }
 .home-content h3 {
     font-size: 1.8em;
-    color: #fff; /* Standout text color (e.g., gold) */
+    color: #fff; 
     padding-top:20px;
     margin-bottom: 10px;
 }
@@ -401,7 +387,6 @@ button {
     min-height: 15%;
     max-height: 15%;
 }
-
 
 .home-bottom-section-left h2 {
     top:0;
@@ -426,7 +411,6 @@ button {
     bottom: 0;
     min-height: 15%;
     max-height: 15%;
-    
 }
 
 .home-bottom-section-right div {
@@ -466,5 +450,7 @@ hr{
     background-color: rgba(255, 255, 255, 0.271);
     margin-top: 20%;
 }
+
+
     
 /* Home Page Styling Ends Here */

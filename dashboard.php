@@ -1,3 +1,24 @@
+<?php
+session_start();
+require_once "config.php";
+if(!isset($_SESSION['uid'])){ // checking if the session is implimented
+   // header("location: index.php"); 
+}
+$uid = $_SESSION['uid']; // session key = user id which is used to access the database
+
+$q1 = mysqli_query($conn,"SELECT fname, lname FROM student WHERE cunyid='$uid';");
+if(mysqli_num_rows($q1) > 0){
+    $newq1 = mysqli_fetch_assoc($q1);
+    $fname = $newq1['fname'];
+    $lname = $newq1['lname'];
+}
+/*
+$q2 = mysqli_query($conn,"SELECT classid, grade, last_day FROM student_class WHERE student_id=''$uid';");
+if(mysqli_num_rows($q2) > 0){
+    $newq2 = my
+}
+*/
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +30,7 @@
 
 
 <link rel="stylesheet" href="styles.css">
-<title>INC Resolver - Student Home</title>
+<title>Student Home</title>
 <style>
     
 </style>
