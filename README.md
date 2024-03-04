@@ -43,12 +43,11 @@ flowchart TB
     Login-->Instructor-Dashboard
     Instructor-Dashboard-->View-more-student
     Instructor-Dashboard-->Add-student
-    Instructor-Dashboard-->Instructor-Assignment-->Add-assignment-->Submit-assignment
-    Instructor-Assignment-->Edit-assignment-->Submit-assignment
-    Instructor-Dashboard-->Instructor-Class-->Add-class-->Submit-class
-    Instructor-Class-->Edit-Class-->Submit-Class
+    Instructor-Dashboard-->Instructor-Assignment-->Add-assignment
+    Instructor-Assignment-->Edit-assignment
+    Instructor-Dashboard-->Instructor-Class-->Add-class
+    Instructor-Class-->Edit-Class
     Instructor-Class-->Assign-assignment
-    Assign-assignment-->Submit-assign-assignment
     end
 
     subgraph student
