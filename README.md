@@ -7,6 +7,7 @@ https://methsarah.tech/
 ## Current Progress
 _Dictonary:_
 > **✓** : Completed | **-** : Not Started | **UD** : Under Development | **N/A** : Not Applicable
+> UI : User Interface | DB : Data Base / Backend | Integration: Integration of user interface with data base and other backend components
 
 | | UI | DB | Integration |
 |--------------|:-------:|:-------:|:----------------|
