@@ -33,42 +33,44 @@ _Dictonary:_
 Quill JS Rich Text Editor Version 2.0.0-rc.2 - https://quilljs.com/ .\
 IBM watsonx Assistant Lite
 
-#### Student Flow
+## Page Flow
 ```mermaid
-graph TD;
+flowchart TB
 
-    Student-->Login;
-    Student-->Register;
+    subgraph instructor
+    Instructor-->Login
+    Login-->Instructor-Dashboard
+    Instructor-Dashboard-->View-more-student
+    Instructor-Dashboard-->Add-student
+    Instructor-Dashboard-->Instructor-Assignment-->Add-assignment-->Submit-assignment
+    Instructor-Assignment-->Edit-assignment-->Submit-assignment
+    Instructor-Dashboard-->Instructor-Class-->Add-class-->Submit-class
+    Instructor-Class-->Edit-Class-->Submit-Class
+    Instructor-Class-->Assign-assignment
+    Assign-assignment-->Submit-assign-assignment
+    end
+
+    subgraph student
+    Student-->Login
+    Student-->Register
     Register-->Login;
-    Login-->Student-Dashboard;
-    Student-Dashboard-->Student-Assignment;
-    Student-Dashboard-->Profile;
-    Student-Assignment-->Turn-In;
-    Student-Assignment-->Upload-files;
-    Student-Assignment-->Add-link;
-    Student-Assignment-->Add-comments;
-```
-#### Instructor Flow
-```mermaid
-graph TD;
-    Instructor-->Login;
-    Login-->Instructor-Dashboard;
-    Instructor-Dashboard-->View-more-student;
-    Instructor-Dashboard-->Add-student;
-    Instructor-Dashboard-->Instructor-Assignment-->Add-assignment-->Submit-assignment;;
-    Instructor-Assignment-->Edit-assignment-->Submit-assignment;
-    Instructor-Dashboard-->Instructor-Class-->Add-class-->Submit-class;
-    Instructor-Class-->Edit-Class-->Submit-Class;
-    Instructor-Class-->Assign-assignment;
-    Assign-assignment-->Submit-assign-assignment;
-```
-#### Bursar Flow
-```mermaid
-graph TD;
+    Login-->Student-Dashboard
+    Student-Dashboard-->Student-Assignment
+    Student-Dashboard-->Profile
+    Student-Assignment-->Turn-In
+    Student-Assignment-->Upload-files
+    Student-Assignment-->Add-link
+    Student-Assignment-->Add-comments
+    end
+
+    
+    
+    subgraph bursar
     Bursar-->Login;
     Login-->Bursar-Dashboard;
     Bursar-Dashboard-->Bursar-Instructor-->Add-instructor;
     Bursar-Instructor-->Remove-instructor;
-```
+    end
 
+```
 
