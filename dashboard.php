@@ -122,11 +122,11 @@ if(mysqli_num_rows($q2) > 0){
                                                 $assignment_name = $newq6['assignment_name'];
                                                 echo '<div class="task-line">
                                                 <div class="div1"><li>'.$assignment_name.'</li></div>
-                                                <div class="div2">Due: '.$assignment_last_day.'</div>
+                                                <div class="div2">Due:'.$assignment_last_day.'</div>
                                                 <div class="div3">'.$assignment_grade.'</div>
                                                 <div class="div3">'.$assignment_status.'</div>
                                                 <div class="div4">
-                                                    <button class="task-btn" onclick="window.location.href=\'assignment.php?cls='.$classid.'&asi='.$assignment_id_student.'\'">
+                                                    <button class="task-btn" onclick="window.location.href=\'assignment.php?class='.$classid.'&asignment='.$assignment_id_student.'\'">
                                                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                                     </button>
                                                 </div>
