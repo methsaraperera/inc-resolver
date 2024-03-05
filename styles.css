@@ -4,7 +4,11 @@
     --black-color: #131313;
     --button-color:#ffffff;
     --dashboard-purple:rgba(103, 80, 164, 0.05);
+    --yellow-color:#ffa000;
+    --dashboard-border-color: #ddd;
+    --text-color-h2:#49454f;
 }
+
 body, html {
     margin: 0;
     padding: 0;
@@ -24,6 +28,7 @@ body, html {
     box-sizing: border-box; 
     overflow-x: auto;
     height: 8%;
+    overflow: hidden;
 }
 
 .navbar-title {
@@ -104,8 +109,8 @@ body, html {
 
 .card {
     width: calc(33.33% - 10px);
-    background-color: rgba(103, 80, 164, 0.05);
-    border: 1px solid #ddd;
+    background-color: var(--dashboard-purple);
+    border: 1px solid var(--dashboard-border-color);
     border-radius: 16px;
     padding: 20px;
     box-sizing: border-box;
@@ -162,6 +167,13 @@ body, html {
         height: auto;
         margin-top: 0;
     }
+    .breadcrumb-container{
+        width: 96%; /* Make each card take full width in the column layout */
+        margin-left: 2%;
+        margin-right: 2%;
+        height: auto;
+        margin-top: 0;
+    }
 
     .menu{
         width: 96%; /* Make each card take full width in the column layout */
@@ -173,8 +185,8 @@ body, html {
 
 .task-container {
     margin-top: 20px;
-    background-color: rgba(103, 80, 164, 0.05);
-    border: 1px solid #ddd;
+    background-color: var(--dashboard-purple);
+    border: 1px solid var(--dashboard-border-color);
     border-radius: 16px;
     padding: 20px;
     box-sizing: border-box;
@@ -187,7 +199,7 @@ body, html {
 }
 
 .task-divider {
-    border-top: 1px solid #ddd;
+    border-top: 1px solid var(--dashboard-border-color);
     margin-bottom: 10px;
 }
 
@@ -195,7 +207,7 @@ body, html {
     display: flex;
     justify-content: space-between;
     font-size: 16px;
-    color: #49454f;
+    color: var(--text-color-h2);
     margin-top: 20px;
     margin-bottom: 25px;
 }
@@ -231,28 +243,39 @@ body, html {
 .task-line .div4 {
     width: 10%;
     padding-left: 2%;
+    text-align:center;
+
 }
 .task-btn{
     flex: 1; 
     padding: 0;
-    
     border: none;
     color: var(--black-color);
     cursor: pointer;
+    
 }
 
 
 .status {
     width: 20%;
-    text-align: right;
+    text-align: center;
 }
 
-.completed {
-    color: green;
+.Completed {
+    width: 100%;
+    text-align: center;
+	color: 	#1c7232;
+	
 }
 
-.not-completed {
-    color: red;
+.Incomplete {
+    width: 100%;
+    text-align: center;
+	color: #721C24;
+	background-color: #f8d7da;
+	height: max-content;
+    border-radius: 25px;
+    border: 1px solid var(--dashboard-border-color);
 }
 
 .progress-container {
@@ -276,7 +299,7 @@ body, html {
 .menu{
     margin-top: 0;
     background-color: var(--dashboard-purple);
-    border: 1px solid #ddd;
+    border: 1px solid var(--dashboard-border-color);
     border-radius: 16px;
     padding: 20px;
     box-sizing: border-box;
@@ -341,7 +364,7 @@ a:active {
 }
 
 .form-container h2 {
-    color: #49454f;
+    color: var(--text-color-h2);
     margin-bottom: 20px;
 }
 
@@ -368,7 +391,17 @@ input {
     margin-bottom: 15px;
     padding: 10px;
     box-sizing: border-box;
-    border: 1px solid #ddd;
+    border: 1px solid var(--dashboard-border-color);
+    border-radius: 5px;
+}
+
+select {
+    display: block;
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    box-sizing: border-box;
+    border: 1px solid var(--dashboard-border-color);
     border-radius: 5px;
 }
 
@@ -471,7 +504,7 @@ button {
 
 .home-content h1 {
     font-size: 4em;
-    color: #ffa000; 
+    color: var(--yellow-color); 
     margin-bottom: 10px;    
 }
 .home-content h3 {
@@ -512,7 +545,7 @@ button {
 }
 
 .home-bottom-section-right {
-    background-color: #ffa000; /* Adjust the background color as needed */
+    background-color: var(--yellow-color); /* Adjust the background color as needed */
     width: 95%;
     display: flex;
     justify-content: center; /* Center content horizontally */
@@ -579,7 +612,7 @@ hr{
 }
 
 .copy-button:hover i{
-    color: #ffa000;
+    color: var(--yellow-color);
 }
 
 .copy-button:active { 
@@ -594,3 +627,42 @@ hr{
 }
     
 /* Home Page Styling Ends Here */
+
+
+.rightbar-buttons {
+    width: 100%;
+}
+
+.rightbar-button {
+    flex: 1; 
+    padding: 8px 15px;
+    background-color: var(--blue);
+    border: none;
+    color: var(--white-color);
+    border-radius: 10px;
+    cursor: pointer;
+    width:100%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    min-height: 45px;  
+}
+
+.rightbar-divider {
+    border-top: 1px solid var(--dashboard-border-color);
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+
+.breadcrumb-container{
+    margin-top: 20px;
+    background-color: var(--dashboard-purple);
+    border: 1px solid var(--dashboard-border-color);
+    border-radius: 15px;
+    
+    padding: 10px;
+    padding-left: 20px;
+    box-sizing: border-box;
+    min-height: 30px;
+        
+}

@@ -27,9 +27,8 @@ if(mysqli_num_rows($q2) > 0){
 
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
-
-
 <link rel="stylesheet" href="styles.css">
+
 <title>Student Home</title>
 <style>
     
@@ -76,15 +75,6 @@ if(mysqli_num_rows($q2) > 0){
             <!--<div class="task-divider"></div>-->
 
             <?php
-            function displayAssignmentStatus($assignment_status) {
-                if ($assignment_status == 'complete') {
-                    echo '<div class="status completed">' . $assignment_status . '</div>';
-                } elseif ($assignment_status == 'incomplete') {
-                    echo '<div class="status not-completed">Not Completed</div>';
-                } else {
-                    echo '<div class="status unknown">Unknown Status</div>';
-                }
-            }
             
             $q2 = mysqli_query($conn,"SELECT classid, grade, last_day from student_class WHERE student_id='$uid';");
             if(mysqli_num_rows($q2) > 0){
@@ -121,19 +111,16 @@ if(mysqli_num_rows($q2) > 0){
                                                 $newq6 = mysqli_fetch_assoc($q6);
                                                 $assignment_name = $newq6['assignment_name'];
                                                 echo '<div class="task-line">
-                                                <div class="div1"><li>'.$assignment_name.'</li></div>
-                                                <div class="div2">Due:'.$assignment_last_day.'</div>
-                                                <div class="div3">'.$assignment_grade.'</div>
-                                                <div class="div3">'.$assignment_status.'</div>
-                                                <div class="div4">
-                                                    <button class="task-btn" onclick="window.location.href=\'assignment.php?class='.$classid.'&asignment='.$assignment_id_student.'\'">
-                                                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                                                    </button>
-                                                </div>
-                                               
-                                                
-                                            
-                                            </div>';
+                                                    <div class="div1"><li>'.$assignment_name.'</li></div>
+                                                    <div class="div2">Due: '.$assignment_last_day.'</div>
+                                                    <div class="div3">'.$assignment_grade.'</div>
+                                                    <div class="div3 status '.$assignment_status.'">'.$assignment_status.'</div>
+                                                    <div class="div4">
+                                                        <button class="task-btn" onclick="window.location.href=\'assignment.php?class='.$classid.'&asignment='.$assignment_id_student.'\'">
+                                                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>';
                                             
                                             }
                                             
@@ -164,6 +151,18 @@ if(mysqli_num_rows($q2) > 0){
             }
             
             ?>
+
+            <div class="task-line">
+                <div class="div1"><li>Test Assignment Name - Not DB Linked</li></div>
+                <div class="div2">Due:2024-06-23</div>
+                <div class="div3">A</div>
+                <div class="div3">Completed</div>
+                <div class="div4">
+                    <button class="task-btn" onclick="window.location.href='view-assignment.php'">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                    </button>
+                </div>
+            </div>`
 <!--
             <div class="task-subheading">
                 <div>CSC 211H - Advanced Programming Technique Honors</div>
