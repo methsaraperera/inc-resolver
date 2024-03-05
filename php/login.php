@@ -21,7 +21,8 @@ if (isset($_POST['Login'])) {
                     $uid = $row['cunyid']; // will be used in future developments as the session key for login
                     if ($pw == $db_pw) {
                         //echo 'success'; // successfully logged in
-                        header("Location: ../student-dashboard.html"); // invalid password
+                        $_SESSION['uid'] = $uid; // start user session with user id
+                        header("Location: ../dashboard.php");
                         exit();
                     } else {
                         header("Location: ../login.php?stu=true&error-pw=true"); // invalid password
@@ -52,7 +53,9 @@ if (isset($_POST['Login'])) {
                     $db_pw = $row['password'];
                     $uid = $row['cunyid']; // will be used in future developments as the session key for login
                     if ($pw == $db_pw) {
-                        echo 'success'; // successfully logged in
+                        $_SESSION['insid'] = $uid;
+                        $_SESSION['instructor'] = true;
+                        header("Location: ../instructor.php"); 
                     } else {
                         header("Location: ../login.php?inc=true&error-pw=true"); // invalid password
                         exit();
