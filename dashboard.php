@@ -41,8 +41,8 @@ if(mysqli_num_rows($q2) > 0){
 
     <div class="navbar-buttons">
         <p><?php echo $fname," ",$lname,'&nbsp&nbsp&nbsp'?></p>
-        <button class="navbar-button">Profile</button>
-        <button class="navbar-button">Logout</button>
+        <button class="navbar-button" onclick=window.location.href="profile.php">Profile</button>
+        <button class="navbar-button" onclick=window.location.href="php/logout.php">Logout</button>
         <!--<button class="navbar-button"></button>-->
     </div>
 </div>
@@ -121,35 +121,18 @@ if(mysqli_num_rows($q2) > 0){
                                                         </button>
                                                     </div>
                                                 </div>';
-                                            
                                             }
-                                            
-
                                         }
-
                                     }
-
-
-                                    
-
-                        
-
-
                                 }
                             }
-
                         }
                     }
                     //$grade = $newq2['grade'];
                     //$lastday = $newq2['last_day'];
                     //echo $classid," ",$grade," ",$lastday,'<br>';
-                    
                 }
-                
-                
-                
             }
-            
             ?>
 
             <div class="task-line">

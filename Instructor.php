@@ -47,28 +47,6 @@ if(mysqli_num_rows($q1) > 0){
 
 <div class="container">
     <div class="left-panel">
-        <!--<h2>Dashboard</h2>-->
-        <!--<div class="dashboard">
-            <div class="card">
-                <h3></h3>
-                <p>CSC 211H Advanced Programming Technique Honors</p>
-                <p>PHY 215 University Physics 1</p>
-                <p class="card-bottom-text">Total Classes: 2</p>
-            </div>
-            <div class="card">
-                <h3>Days Remaining</h3>
-                <p>CSC 211H. 90 Days Remaining</p>
-                <p>PHY 215. 90 Days Remaining</p>
-            </div>
-            <div class="card">
-                <h3>Tasks Remaining</h3>
-                <p>CSC 211H : 5 Tasks Remaining</p>
-                <p>PHY 215 : 1 Task Remaining</p>
-            </div>
-        </div>-->
-
-        
-
         <div class="task-container">
             <div class="task-heading">Assigned Students</div>
             <div class="task-divider"></div>
@@ -121,287 +99,27 @@ if(mysqli_num_rows($q1) > 0){
                                             </div>';
                                         }
                                     }
-
                                 }
-
                             }                           
-
                         }
-
                     }
                 }
-                
-
-
             }
-
             ?>
-
-        <!--
-            <div class="task-heading">Assigned Students</div>
-            <div class="task-divider"></div>
-            <div class="task-subheading">
-                <div>CSC 211H - Advanced Programming Technique Honors - Fall 2023</div>
-                <div>Class 1 of 3</div>
-            </div>
-            
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href='edit-assignment.php'">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 60%;">60%</div>
-                </div>
-                
-                
-            </div>
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 2%;">2%</div>
-                </div>
-            </div>
-
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 99%;">99%</div>
-                </div>
-            </div>
-
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 78%;">78%</div>
-                </div>
-            </div>
-
-
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 45%;">45%</div>
-                </div>
-            </div>
-
-            <div class="task-subheading">
-                <div>CSC 211H - Advanced Programming Technique Honors - Fall 2023</div>
-                <div>Class 1 of 3</div>
-            </div>
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 23%;">23%</div>
-                </div>
-            </div>
-
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 10%;">10%</div>
-                </div>
-            </div>
-
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 90%;">90%</div>
-                </div>
-            </div>
-
-            <div class="task-line">
-                <div class="div1"><li>John Doe</a></li></div>
-                <div class="div2">Due: May 06 2024</div>
-                <div class="div4">
-                    <button class="task-btn" onclick="window.location.href=#">
-                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
-                    </button>
-                </div>
-                <div class="progress-container div1">
-                    <div class="progress-bar" style="width: 75%;">75%</div>
-                </div>
-            </div>-->
-            <!--
-            <div class="task-line">
-                <div><li>Annie Norton</li></div>
-                <div>Open</div>
-                <div>Deadline: May 06 2024</div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 20%;">20%</div>
-                </div>
-            </div>
-            <div class="task-line">
-                <div><li>Jermaine Bush</li></div>
-                <div>Open</div>
-                <div>Deadline: May 06 2024</div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 35%;">35%</div>
-                </div>
-            </div>
-            <div class="task-line">
-                <div><li>Josiah Castro</li></div>
-                <div>Open</div>
-                <div>Deadline: May 06 2024</div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 60%;">60%</div>
-                </div>
-            </div>
-
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>CSC 101 - Principles in Information Technology and Computatio - Fall 2023</div>
-                <div>Class 2 of 3</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Alisha Wallace</li></div>
-                <div>Open</div>
-                <div>Due: May 06 2024</div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 50%;">50%</div>
-                </div>
-            </div>
-            <div class="task-divider"></div>
-            <div class="task-subheading">
-                <div>CSC 101 - Principles in Information Technology and Computatio - Summer 2023</div>
-                <div>Class 3 of 3</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Gerardo Santos</li></div>
-                <div>Open</div>
-                <div>Due: May 06 2024</div>
-                <div class="progress-container">
-                    <div class="progress-bar" style="width: 80%;">80%</div>
-                </div>
-            </div>
--->
-        
-        
         </div>
     </div>
     <div class="right-panel">
         <br>
         <div class="menu">
-            
             <div class="task-heading">Menu</div>
             <div class="rightbar-divider"></div>
-            
-            <!--<div class="task-subheading">
-                <div>There will be a menu here</div>
-                
-                
-            </div>-->
-           
-       
             <div class="rightbar-buttons">
                 <button class="rightbar-button" onclick=window.location.href="add-student.php">Add a student</button>
                 <div class="rightbar-divider"></div>
-                <button class="rightbar-button">Assignments</button>
-                <button class="rightbar-button">Classes</button>
-               
+                <button class="rightbar-button" onclick=window.location.href="assignments.php">Assignments</button>
+                <button class="rightbar-button" onclick=window.location.href="classes.php">Classes</button>     
             </div>
-            <!--<div class="task-line">
-                <div><li>Assignment 6</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 7</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 8</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 9</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Project</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>PHY 215 - University Physics 1</div>
-                <div>Class 2 of 2</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Exam</li></div>
-                <div>Open</div>
-                <div>Due: May 6 2024</div>
-                <div>100</div>
-            </div>-->
-            
         </div>
-
-        
-        <!--<h2>25% Width Body</h2>
-        <p>This is the sidebar content area which occupies 25% of the screen width.</p>-->
     </div>
 </div>
 

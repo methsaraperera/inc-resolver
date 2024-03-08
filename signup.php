@@ -19,8 +19,8 @@
 <div class="navbar">
     <h2 class="navbar-title">BMCC Task Tracker - Home</h2>
     <div class="navbar-buttons">
-        <button class="navbar-button">Home</button>
-        <button class="navbar-button">Sign In</button>
+        <button class="navbar-button" onclick=window.location.href="index.html">Home</button>
+        <button class="navbar-button" onclick=window.location.href="login.html">Sign In</button>
     </div>
 </div>
 <div class="full-screen-container">
