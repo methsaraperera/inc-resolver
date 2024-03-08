@@ -40,6 +40,7 @@ if(mysqli_num_rows($q1) > 0){
     <h2 class="navbar-title">BMCC Task Tracker - Instructor View</h2>
     <div class="navbar-buttons">
         <p><?php echo $fname," ",$lname,'&nbsp&nbsp&nbsp'?></p>
+        <button class="navbar-button" onclick=window.location.href="instructor.php">Dashboard</button>
         <button class="navbar-button">Profile</button>
         <button class="navbar-button">Logout</button>
         <!--<button class="navbar-button"></button>-->
@@ -51,11 +52,11 @@ if(mysqli_num_rows($q1) > 0){
         <!--<h2>Dashboard</h2>-->
         <div class="dashboard">
             <div class="card">
-                <form method="POST" class="flex-form" action="php/login.php" enctype="multipart/form-data">
-                    <label for="sid">Student Id</label>
+                <form method="POST" class="flex-form" action="php/search-student.php" enctype="multipart/form-data" id="search">
+                    <label for="sid">Student Id - CUNY ID</label>
                     <input type="number" id="sid" name="sid" placeholder="########" required>
                     <label for="class">Select Class</label>
-                    <select name="class" id="class" form="carform">
+                    <select name="class" id="class" form="search">
                     <?php 
                     $q2 = mysqli_query($conn, "SELECT classid FROM instructor_class WHERE instructor_cunyid='$uid';");
                     if(mysqli_num_rows($q2) > 0){
@@ -70,84 +71,85 @@ if(mysqli_num_rows($q1) > 0){
                                     $classname = $newq3['classname'];
                                     $semester_term = $newq3['semester_term'];
                                     $semester_year = $newq3['semester_year'];
-                                    echo '<option value="volvo">'. $semester_year ." ". $semester_term ." - ". $subject ." ". $unit ." : ". $section ." - ". $classname .'</option>'; 
+                                    echo '<option value='.$classid.'>'. $semester_year ." ". $semester_term ." - ". $subject ." ". $unit ." : ". $section ." - ". $classname .'</option>'; 
                                 }
                             }
                         }
                     }
                     ?>
                     </select>
+                    <input type='hidden' id='classid' name='classid' value= '<?php echo $classid; ?>'>
                     <input type="submit" class="rightbar-button" name="Search" value="Search" required>
                     <!--<input type="submit" class="form-button" name="Search" value="Search" required>-->
                 </form> 
             </div>
             <div class="card">
-                <form method="POST" class="flex-form" action="php/login.php" enctype="multipart/form-data">
-                    <label for="class">Class Id</label>
-                    <select name="class" id="class" form="carform">
-                        <option value="volvo">Volvo</option>
-                        <option value="saab">Saab</option>
-                        <option value="opel">Opel</option>
-                        <option value="audi">Audi</option>
-                    </select>
-                    <!--<input type="submit" class="form-button" name="Search" value="Search" required>-->
-                </form>
+                <?php 
+                if (isset($_GET['search'])) {
+                    $uid = $_GET['sid'];
+                    $classid = $_GET['classid'];
+                    echo '
+                    <form method="POST" class="flex-form" action="php/assign-class-student.php" enctype="multipart/form-data">
+                        <label for="last_date">Due Date</label>
+                        <input type="date"  name="last_date" required>
+                        <label for="grade">Default Grade</label>
+                        <input type="text" name="grade" value="INC" disabled>
+                        <input type="hidden" name="grade" value="INC">
+                        <input type="hidden" id="classid" name="classid" value= '.$classid.'>
+                        <input type="hidden" id="uid" name="uid" value= '.$uid.'>
+                        <input type="submit" class="rightbar-button" name="add" value="Add Student" required>
+                    </form>';
+                }
+                else{
+                    echo '<div class="task-subheading">
+                        <div> Search student to see next steps.</div>
+                    </div>';
+                }
+                ?>
+                
+                
             </div>
+            
             <div class="card">
-                <h3>Tasks Remaining</h3>
-                <p>CSC 211H : 5 Tasks Remaining</p>
-                <p>PHY 215 : 1 Task Remaining</p>
+            <?php 
+                if (isset($_GET['search'])) {
+                    echo '<div class="notice">Student available to register.</div>';
+                }
+                elseif (isset($_GET['nstu'])) {
+                    echo '<div class="error">Student not registered<br><br>Inform the student to register to the application in order for you to add them to a class.</div>';
+                } 
+                elseif (isset($_GET['assign'])) {
+                    echo '<div class="error">Student already assigned to the class.</div>';
+                }
+                
+                elseif(isset($_GET['success'])){
+                    echo '<div class="success">Student assigned to the class successfully.</div>';
+                }
+                elseif(isset($_GET['failed'])){
+                    echo '<div class="error">ERROR: Failed to assign student.</div>';
+                }
+                else{
+                    echo '<div class="task-subheading">
+                        <div> Search student to see next steps.</div>
+                    </div>';
+                }
+            ?>
+                
             </div>
         </div>
 
         
 
-        <div class="task-container">
-            <div class="task-heading">Assigned Students</div>
-            <div class="task-divider"></div>
-
-            <form method="POST" class="flex-form" action="php/login.php" enctype="multipart/form-data">
-                <label for="email">Student Id</label>
-
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" placeholder="test@test.net" required>
-            
-                <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Password" required>
-                <input type='hidden' id='role' name='role' value= '<?php echo $role; ?>'>
-            
-                <input type="submit" class="form-button" name="Login" value="Login" required>
-
-            </form>   
-            
-
         
-        </div>
     </div>
     <div class="right-panel">
         <div class="menu">
-            <p>CLASS: Assigned</p>
-            <p>ASSIGNMENTS: Assigned</p>
-            <!--
             <div class="task-heading">Menu</div>
             <div class="rightbar-divider"></div>
-            
-            
-           
-       
             <div class="rightbar-buttons">
-                <button class="rightbar-button">Add a student</button>
-                <div class="rightbar-divider"></div>
-                <button class="rightbar-button">Assignments</button>
-                <button class="rightbar-button">Classes</button>
-               
+                <button class="rightbar-button" onclick=window.location.href="instructor.php">Dashboard</button> 
             </div>
-                -->
-            
         </div>
-
-        
-        
     </div>
 </div>
 

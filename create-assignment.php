@@ -1,16 +1,18 @@
 <?php
 session_start();
 require_once "config.php";
-
-if (!isset($_SESSION['insid']) || !isset($_SESSION['instructor']) || $_SESSION['instructor'] != true) {
-    header("location: index.html");
+if(!isset($_SESSION['insid'])){ // checking if the session is implimented
+    header("location: index.html"); 
+    exit();
+}
+if(!isset($_SESSION['instructor']) || $_SESSION['instructor'] != true){ // checking if the session is implimented
+    header("location: index.html"); 
     exit();
 }
 
-$uid = $_SESSION['insid'];
-$q1 = mysqli_query($conn, "SELECT fname, lname FROM instructor WHERE cunyid='$uid';");
-
-if (mysqli_num_rows($q1) > 0) {
+$uid = $_SESSION['insid']; 
+$q1 = mysqli_query($conn,"SELECT fname, lname FROM instructor WHERE cunyid='$uid';");
+if(mysqli_num_rows($q1) > 0){
     $newq1 = mysqli_fetch_assoc($q1);
     $fname = $newq1['fname'];
     $lname = $newq1['lname'];
@@ -68,7 +70,7 @@ if (mysqli_num_rows($q1) > 0) {
                     <label for="quillText">Assignment Content</label>
                     <div id="quill-editor" style="height: 300px;"></div>
 
-                    <button type="submit">Publish</button>
+                    <!--<button type="submit">Publish</button>-->
                 </form>
 
             </div>
@@ -78,17 +80,18 @@ if (mysqli_num_rows($q1) > 0) {
         <div class="right-panel">
             <br>
             <div class="menu">
-
                 <div class="rightbar-buttons">
                     <button class="rightbar-button" form="assignment">Publish</button>
+                    <div class="rightbar-divider"></div>
+                    <button class="rightbar-button" onclick=window.location.href="assignments.php">Back to all assignments</button>
                 </div>
             </div>
             <br>
 
-            <div class="menu">
+            <!--<div class="menu">
                 <p>Due Date: Jun 24, 2024</p>
                 <p>Points Possible: 100 Points</p>
-            </div>
+            </div>-->
 
         </div>
     </div>
