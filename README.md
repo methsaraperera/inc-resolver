@@ -19,10 +19,10 @@ _Dictonary:_
 |Student Dashboard|✓|UD|UD|
 |Instructor Signup|✓|✓|✓|
 |Instructor Login|✓|✓|✓|
-|Instructor Dashboard|✓|-|-|
+|Instructor Dashboard|✓|UD|UD|
 |Bursar Login|-|-|-|
 |Bursar Dashboard|-|-|-|
-|AI Chatbot|UD|UD|-|
+|AI Chatbot|UD|UD|UD|
 
 
 ## Login Roles
