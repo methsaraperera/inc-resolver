@@ -40,16 +40,14 @@ if(mysqli_num_rows($q1) > 0){
     <h2 class="navbar-title">BMCC Task Tracker - Instructor View</h2>
     <div class="navbar-buttons">
         <p><?php echo $fname," ",$lname,'&nbsp&nbsp&nbsp'?></p>
-        <button class="navbar-button" onclick=window.location.href="instructor.php">Dashboard</button>
-        <button class="navbar-button">Profile</button>
-        <button class="navbar-button">Logout</button>
+        <button class="navbar-button" onclick=window.location.href="profile.php">Profile</button>
+        <button class="navbar-button" onclick=window.location.href="php/logout.php">Logout</button>
         <!--<button class="navbar-button"></button>-->
     </div>
 </div>
 
 <div class="container">
     <div class="left-panel">
-        <!--<h2>Dashboard</h2>-->
         <div class="dashboard">
             <div class="card">
                 <form method="POST" class="flex-form" action="php/search-student.php" enctype="multipart/form-data" id="search">
@@ -106,35 +104,32 @@ if(mysqli_num_rows($q1) > 0){
                     </div>';
                 }
                 ?>
-                
-                
             </div>
             
             <div class="card">
-            <?php 
-                if (isset($_GET['search'])) {
-                    echo '<div class="notice">Student available to register.</div>';
-                }
-                elseif (isset($_GET['nstu'])) {
-                    echo '<div class="error">Student not registered<br><br>Inform the student to register to the application in order for you to add them to a class.</div>';
-                } 
-                elseif (isset($_GET['assign'])) {
-                    echo '<div class="error">Student already assigned to the class.</div>';
-                }
-                
-                elseif(isset($_GET['success'])){
-                    echo '<div class="success">Student assigned to the class successfully.</div>';
-                }
-                elseif(isset($_GET['failed'])){
-                    echo '<div class="error">ERROR: Failed to assign student.</div>';
-                }
-                else{
-                    echo '<div class="task-subheading">
-                        <div> Search student to see next steps.</div>
-                    </div>';
-                }
-            ?>
-                
+                <?php 
+                    if (isset($_GET['search'])) {
+                        echo '<div class="notice">Student available to register.</div>';
+                    }
+                    elseif (isset($_GET['nstu'])) {
+                        echo '<div class="error">Student not registered<br><br>Inform the student to register to the application in order for you to add them to a class.</div>';
+                    } 
+                    elseif (isset($_GET['assign'])) {
+                        echo '<div class="error">Student already assigned to the class.</div>';
+                    }
+                    
+                    elseif(isset($_GET['success'])){
+                        echo '<div class="success">Student assigned to the class successfully.</div>';
+                    }
+                    elseif(isset($_GET['failed'])){
+                        echo '<div class="error">ERROR: Failed to assign student.</div>';
+                    }
+                    else{
+                        echo '<div class="task-subheading">
+                            <div> Search student to see next steps.</div>
+                        </div>';
+                    }
+                ?>
             </div>
         </div>
 

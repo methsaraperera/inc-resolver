@@ -12,6 +12,10 @@ if(mysqli_num_rows($q1) > 0){
     $fname = $newq1['fname'];
     $lname = $newq1['lname'];
 }
+if(!isset($_GET['assignment'])){
+    //header("location: dashboard.php"); 
+    exit();
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,33 +48,35 @@ if(mysqli_num_rows($q1) > 0){
 
 <div class="container">
     <div class="left-panel">
-        <div class="breadcrumb-container">
+        <!--<div class="breadcrumb-container">
             Home &nbsp<i class="fa-solid fa-caret-right"></i>&nbsp Assignments &nbsp<i class="fa-solid fa-caret-right"></i>&nbsp Paper 4: A Final Documented Essay
-        </div>
+        </div>-->
+        
         <div class="task-container">
-            <div class="task-heading">Paper 4: A Final Documented Essay</div>
-            <div class="task-subheading">Instructor Name</div>
-            <div class="task-divider"></div>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Pellentesque habitant morbi tristique senectus et netus et malesuada. Vitae proin sagittis nisl rhoncus mattis rhoncus urna. Nec feugiat in fermentum posuere urna. Blandit cursus risus at ultrices mi. Risus commodo viverra maecenas accumsan lacus. Scelerisque in dictum non consectetur a erat. Nec ultrices dui sapien eget mi proin sed libero. Maecenas ultricies mi eget mauris pharetra et. Eget arcu dictum varius duis at consectetur lorem donec. Est ultricies integer quis auctor. Nunc eget lorem dolor sed viverra. Interdum velit euismod in pellentesque massa placerat duis. Duis at tellus at urna condimentum mattis pellentesque. Elit ullamcorper dignissim cras tincidunt lobortis feugiat vivamus at. Mi in nulla posuere sollicitudin aliquam ultrices sagittis. Dictum varius duis at consectetur lorem donec massa sapien faucibus.<br><br>
+            <?php
+            $assignment_id = $_GET['assignment'];
+            $search_query = mysqli_query($conn, "SELECT assignment_name, content FROM assignment WHERE assignment_id='$assignment_id';");
+            if(mysqli_num_rows($search_query) > 0){
+                while ($newq = mysqli_fetch_assoc($search_query)) {
+                    $assignment_name = $newq['assignment_name'];
+                    $assignment_content = $newq['content'];
+                    echo '<h1>'.$assignment_name.'</h1>';
+                }
 
-            Senectus et netus et malesuada fames. Gravida quis blandit turpis cursus in hac. Sapien nec sagittis aliquam malesuada bibendum arcu vitae elementum. Rutrum tellus pellentesque eu tincidunt. Cum sociis natoque penatibus et magnis. Feugiat sed lectus vestibulum mattis. Quam viverra orci sagittis eu volutpat odio. Sed libero enim sed faucibus turpis in eu mi bibendum. Sit amet consectetur adipiscing elit pellentesque habitant morbi tristique senectus. Sagittis eu volutpat odio facilisis. In massa tempor nec feugiat nisl pretium fusce. Auctor elit sed vulputate mi sit. Risus nullam eget felis eget nunc lobortis mattis aliquam faucibus. Sed lectus vestibulum mattis ullamcorper velit sed ullamcorper. Consectetur adipiscing elit ut aliquam purus. Mattis ullamcorper velit sed ullamcorper morbi tincidunt ornare. Quam viverra orci sagittis eu. At in tellus integer feugiat scelerisque.</p>
+            }
+
+            ?>
+            <div class="task-divider"></div>
+            <label>Assignment ID: <?php echo $assignment_id ?>
+            <label>Assignment Content:</label>
+                <?php echo $assignment_content;?>
+            <div class="task-divider"></div>
+            
+
             
         </div> 
-        <div class="task-container">
-            <div class="task-heading">Add Comments</div>
-            <div id="editor">
-                <br/>
-                <!--
-                <p>Hello World!</p>
-                <p>Some initial <strong>bold</strong> text</p>
-                <p><br /></p>-->
-            </div>
-            
-
 
         
-            
-        </div> 
 
         
     </div>
@@ -78,22 +84,17 @@ if(mysqli_num_rows($q1) > 0){
     <div class="right-panel">
         <br>
         <div class="menu">
-            <div class="task-heading">Your work</div>
-            
+            <div class="task-heading">Menu</div>
             <div class="rightbar-divider"></div>
             <div class="rightbar-buttons">
-                <button class="rightbar-button">Turn in</i></button>
+                <button class="rightbar-button" form="assignment">Mark as completed</i></button>
+                
                 <div class="rightbar-divider"></div>
-                <button class="rightbar-button">Upload a file</i></button>
-                <button class="rightbar-button">Add a link</i></button>
+                <button class="rightbar-button" onclick=window.location.href="dashboard.php">Back to the dashboard</button>
+        
             </div>
         </div>
         <br>
-
-        <div class="menu">
-            <p>Due Date: Jun 24, 2024</p>
-            <p>Points Possible: 100 Points</p>
-        </div>
         
     </div>
 </div>
@@ -103,14 +104,6 @@ if(mysqli_num_rows($q1) > 0){
 </div>
 
 
-<!-- Include the Quill library -->
-<script src="https://cdn.jsdelivr.net/npm/quill@2.0.0-rc.2/dist/quill.js"></script>
-<!-- Initialize Quill editor -->
-<script>
-  const quill = new Quill('#editor', {
-    theme: 'snow'
-  });
-</script>
 
 <script src="js/watson.js"></script>
 <script src="https://kit.fontawesome.com/137463bc4f.js" crossorigin="anonymous"></script>

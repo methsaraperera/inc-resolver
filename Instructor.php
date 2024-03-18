@@ -39,8 +39,8 @@ if(mysqli_num_rows($q1) > 0){
     <h2 class="navbar-title">BMCC Task Tracker - Instructor View</h2>
     <div class="navbar-buttons">
         <p><?php echo $fname," ",$lname,'&nbsp&nbsp&nbsp'?></p>
-        <button class="navbar-button">Profile</button>
-        <button class="navbar-button">Logout</button>
+        <button class="navbar-button" onclick=window.location.href="profile.php?inc=true">Profile</button>
+        <button class="navbar-button" onclick=window.location.href="php/logout.php">Logout</button>
         <!--<button class="navbar-button"></button>-->
     </div>
 </div>
@@ -87,7 +87,7 @@ if(mysqli_num_rows($q1) > 0){
                                                 <div class="div2">Due: '.$stu_last_day.'</div>
                                                 <div class="div3">'.$stu_grade.'</div>
                                                 <div class="div4">
-                                                    <button class="task-btn" onclick="window.location.href=\'view-student.php?class='.$classid.'&sid='.$stu_id.'\'">
+                                                    <button class="task-btn" onclick="window.location.href=\'student.php?class='.$classid.'&sid='.$stu_id.'\'">
                                                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                                                     </button>
                                                 </div> 
@@ -117,7 +117,7 @@ if(mysqli_num_rows($q1) > 0){
                 <button class="rightbar-button" onclick=window.location.href="add-student.php">Add a student</button>
                 <div class="rightbar-divider"></div>
                 <button class="rightbar-button" onclick=window.location.href="assignments.php">Assignments</button>
-                <button class="rightbar-button" onclick=window.location.href="classes.php">Classes</button>     
+                <button class="rightbar-button" onclick=window.location.href="create-class.php">Create New Class</button>     
             </div>
         </div>
     </div>

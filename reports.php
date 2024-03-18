@@ -2,7 +2,7 @@
 session_start();
 require_once "config.php";
 if(!isset($_SESSION['uid'])){ // checking if the session is implimented
-    header("location: index.html"); 
+    //header("location: index.html"); 
 }
 $uid = $_SESSION['uid']; // session key = user id which is used to access the database
 
@@ -28,8 +28,9 @@ if(mysqli_num_rows($q2) > 0){
 <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Inter&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-<title>Student Home</title>
+<title>Reports Home</title>
 <style>
     
 </style>
@@ -37,7 +38,7 @@ if(mysqli_num_rows($q2) > 0){
 <body>
 
 <div class="navbar">
-    <h2 class="navbar-title">BMCC Task Tracker - Student View</h2>
+    <h2 class="navbar-title">BMCC Task Tracker - Dep. Chair View</h2>
 
     <div class="navbar-buttons">
         <p><?php echo $fname," ",$lname,'&nbsp&nbsp&nbsp'?></p>
@@ -52,10 +53,9 @@ if(mysqli_num_rows($q2) > 0){
         <!--<h2>Dashboard</h2>-->
         <div class="dashboard">
             <div class="card">
-                <h3>Extended Classes</h3>
-                <p>CSC 211H Advanced Programming Technique Honors</p>
-                <p>PHY 215 University Physics 1</p>
-                <p class="card-bottom-text">Total Classes: 2</p>
+                <h3>Progress</h3>
+                <canvas id="myChart" width="400" height="400"></canvas>
+
             </div>
             <div class="card">
                 <h3>Days Remaining</h3>
@@ -145,109 +145,7 @@ if(mysqli_num_rows($q2) > 0){
                         <i class="fa-solid fa-arrow-up-right-from-square"></i>
                     </button>
                 </div>
-            </div>`
-<!--
-            <div class="task-subheading">
-                <div>CSC 211H - Advanced Programming Technique Honors</div>
-                <div>Class 1 of 2</div>
             </div>
-            <div class="task-line">
-                <div><li>Assignment 6</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-                <div class="status completed">Completed</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 7</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-                <div class="status completed">Completed</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 8</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-                <div class="status completed">Completed</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 9</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-                <div class="status not-completed">Not Completed</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Project</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-                <div class="status not-completed">Not Completed</div>
-            </div>
-
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>PHY 215 - University Physics 1</div>
-                <div>Class 2 of 2</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Exam</li></div>
-                <div>Open</div>
-                <div>Due: May 6 2024</div>
-                <div>100</div>
-                <div class="status not-completed">Not Completed</div>
-            </div>
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>PHY 215 - University Physics 1</div>
-                <div>Class 2 of 2</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Exam</li></div>
-                <div>Open</div>
-                <div>Due: May 6 2024</div>
-                <div>100</div>
-                <div class="status not-completed">Not Completed</div>
-            </div>
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>PHY 215 - University Physics 1</div>
-                <div>Class 2 of 2</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Exam</li></div>
-                <div>Open</div>
-                <div>Due: May 6 2024</div>
-                <div>100</div>
-                <div class="status not-completed">Not Completed</div>
-            </div>
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>PHY 215 - University Physics 1</div>
-                <div>Class 2 of 2</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Exam</li></div>
-                <div>Open</div>
-                <div>Due: May 6 2024</div>
-                <div>100</div>
-                <div class="status not-completed">Not Completed</div>
-            </div>-->
-            
         </div>
     </div>
     <div class="right-panel">
@@ -259,55 +157,6 @@ if(mysqli_num_rows($q2) > 0){
                 <div>There will be a menu here</div>
                 
             </div>
-            <!--<div class="task-line">
-                <div><li>Assignment 6</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 7</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 8</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Assignment 9</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Project</li></div>
-                <div>Open</div>
-                <div>Due: Feb 28 2024</div>
-                <div>100</div>
-            </div>
-
-            <div class="task-divider"></div>
-
-            <div class="task-subheading">
-                <div>PHY 215 - University Physics 1</div>
-                <div>Class 2 of 2</div>
-            </div>
-
-            <div class="task-line">
-                <div><li>Final Exam</li></div>
-                <div>Open</div>
-                <div>Due: May 6 2024</div>
-                <div>100</div>
-            </div>-->
-            
         </div>
 
         
@@ -319,6 +168,31 @@ if(mysqli_num_rows($q2) > 0){
 <div class="footer">
     <p class="footer-content">Copyright © Methsara Perera - Tech Innovation Hub Internship @ BMCC Tech Learning Community </p>
 </div>
+
+<script>
+    // Hardcoded data
+    var data = {
+        labels: ['Category A', 'Category B', 'Category C'],
+        datasets: [{
+            data: [300, 200, 100],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.6)',
+                'rgba(54, 162, 235, 0.6)',
+                'rgba(255, 206, 86, 0.6)'
+            ],
+        }]
+    };
+
+    var ctx = document.getElementById('myChart').getContext('2d');
+    var myChart = new Chart(ctx, {
+        type: 'doughnut', // Change the chart type to 'doughnut'
+        data: data,
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+        }
+    });
+    </script>
 
 <script src="js/watson.js"></script>
 <script src="https://kit.fontawesome.com/137463bc4f.js" crossorigin="anonymous"></script>

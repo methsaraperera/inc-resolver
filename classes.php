@@ -40,7 +40,7 @@ if(mysqli_num_rows($q1) > 0){
     <h2 class="navbar-title">BMCC Task Tracker - Instructor View</h2>
     <div class="navbar-buttons">
         <p><?php echo $fname," ",$lname,'&nbsp&nbsp&nbsp'?></p>
-        <button class="navbar-button" onclick=window.location.href="profile.php">Profile</button>
+        <button class="navbar-button">Profile</button>
         <button class="navbar-button">Logout</button>
         <!--<button class="navbar-button"></button>-->
     </div>
@@ -53,9 +53,11 @@ if(mysqli_num_rows($q1) > 0){
             <div class="task-divider"></div>
             <?php
 
-            $search_query = mysqli_query($conn, "SELECT assignment_name, assignment_id FROM assignment WHERE instructor_id='$uid';");
+            $search_query = mysqli_query($conn, "SELECT classid FROM instructor_class WHERE instructor_cunyid='$uid';");
             if(mysqli_num_rows($search_query) > 0){
                 while ($newq = mysqli_fetch_assoc($search_query)) {
+                    $classid = $newq['classid'];
+                    $search_query = mysqli_query($conn, "SELECT classid FROM instructor_class WHERE instructor_cunyid='$uid';");
                     $assignment_id = $newq['assignment_id'];
                     $assignment_name = $newq['assignment_name'];
                     echo '<div class="task-line">
